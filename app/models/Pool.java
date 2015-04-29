@@ -10,11 +10,11 @@ import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * Created by Jeffy on 2015/4/29 0029.
+ * Created by jeffy on 2015/4/29 0029.
  */
 
 @Entity
-public class User extends Model {
+public class Pool extends Model{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,10 +26,10 @@ public class User extends Model {
     @Formats.DateTime(pattern="yyyy-MM-dd HH:mm:ss")
     public Date updateDate = new Date();
 
-    public String userName;
+    public String poolName;
 
-    public String password;
+    public String host;
 
-    public String tenantName;
+    public Integer port;
 
 }
