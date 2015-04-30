@@ -1,0 +1,66 @@
+@(pool : Pool)
+
+@main{<ol class="breadcrumb"><li class="active">Home</li><li class="active">Pool</li><li class="active">@pool.poolName</li></ol>} {
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-primary " style="min-height: 300px">
+                <div class="panel-heading">Pool Information</div>
+                <ul class="list-group">
+                    <li class="list-group-item">@pool.poolName</li>
+                    <li class="list-group-item">http://@pool.host:@pool.port/@pool.version</li>
+                    <li class="list-group-item">@pool.createDate</li>
+                    <li class="list-group-item">@pool.updateDate</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-primary " style="min-height: 300px">
+                <div class="panel-heading">Server <span class="badge">4</span></div>
+                <div class="panel-body">
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary " style="min-height: 300px">
+                <div class="panel-heading">Image <span class="badge">4</span></div>
+                <div class="panel-body">
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                    <li>@pool.poolName</li>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary " style="min-height: 300px">
+                <div class="panel-heading">Block Storage <span class="badge">4</span></div>
+                <div class="panel-body">
+                    <li>@pool.poolName</li>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-primary " style="min-height: 300px">
+                <div class="panel-heading ">Network <span class="badge">4</span></div>
+                <div class="panel-body">
+                    <li>@pool.poolName</li>
+                </div>
+            </div>
+        </div>
+    </div>
+}

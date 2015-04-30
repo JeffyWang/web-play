@@ -32,6 +32,8 @@ public class Pool extends Model{
 
     public Integer port;
 
+    public String version;
+
     public static Finder<Integer,Pool> find = new Finder<Integer,Pool>(
             Integer.class, Pool.class
     );

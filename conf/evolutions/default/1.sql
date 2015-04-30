@@ -10,6 +10,7 @@ create table pool (
   pool_name                 varchar(255),
   host                      varchar(255),
   port                      integer,
+  version                   varchar(255),
   constraint pk_pool primary key (id))
 ;
 

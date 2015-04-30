@@ -1,8 +1,10 @@
 package controllers;
 
 import models.Pool;
+import play.data.Form;
 import play.mvc.Controller;
-import views.html.add_pool;
+import views.html.index;
+import views.html.pool_detail;
 import views.html.pools;
 import play.mvc.*;
 
@@ -25,9 +27,18 @@ public class PoolApplication  extends Controller {
 
     public static Result addPool() {
 
+        Pool pool = Form.form(Pool.class).bindFromRequest().get();
+        pool.save();
 
+        return ok(index.render());
 
-        return ok(add_pool.render());
+    }
+
+    public static Result getPool(Integer poolId) {
+
+        Pool pool = Pool.find.byId(poolId);
+
+        return ok(pool_detail.render(pool));
 
     }
 }

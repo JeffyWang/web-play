@@ -1,33 +1,71 @@
 @(pools: List[models.Pool])
 
-@main() {
-  <div class="container marketing">
+@main{<ol class="breadcrumb"><li class="active">Home</li><li class="active">Pools</li></ol>} {
+    <script src="@routes.Assets.at("js/addPool.js")" type="text/javascript"></script>
 
-      <div class="row" id="bubblemenu">
-          <a href="@routes.PoolApplication.addPool()" ><img class="cloud" src="@routes.Assets.at("images/add.png")"></a>
-          @for(pool <- pools) {
-              <a href="#">
-                  <img class="cloud" src="@routes.Assets.at("images/pool.jpg")">
-                  <div>
-                    <table class="table">
-                      <tbody>
-                        <tr>
-                          <th scope="row">name</th>
-                          <td>@pool.poolName</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">host</th>
-                          <td>@pool.host</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">port</th>
-                          <td>@pool.port</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-              </a>
-          }
-      </div>
-  </div>
+    <div class="container marketing">
+
+        <div class="row" id="bubblemenu">
+            <a href="#" data-toggle="modal" data-target="#addpool"><img class="cloud" src="@routes.Assets.at("images/add.png")"></a>
+            @for(pool <- pools) {
+                <a href="@routes.PoolApplication.getPool(pool.id)">
+                    <img class="cloud" src="@routes.Assets.at("images/pool.jpg")">
+                    <div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">name</th>
+                                    <td>@pool.poolName</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">host</th>
+                                    <td>@pool.host</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">port</th>
+                                    <td>@pool.port</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">version</th>
+                                    <td>@pool.version</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </a>
+            }
+            <div class="modal fade" id="addpool" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form class="modal-content" action="@routes.PoolApplication.addPool()" method="post">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Add Pool</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group input-group-sm data">
+                                <span class="input-group-addon label-danger"> </span>
+                                <input id="poolName" type="text" class="form-control" placeholder="Pool Name" aria-describedby="sizing-addon1" name="poolName">
+                            </div>
+                            <div class="input-group input-group-sm data">
+                                <span class="input-group-addon label-danger"> </span>
+                                <input id="host" type="text" class="form-control" placeholder="Host" aria-describedby="sizing-addon1" name="host">
+                            </div>
+                            <div class="input-group input-group-sm data">
+                                <span class="input-group-addon label-danger"> </span>
+                                <input id="port" type="text" class="form-control" placeholder="Port" aria-describedby="sizing-addon1" name="port">
+                             </div>
+                            <div class="input-group input-group-sm data">
+                                <span class="input-group-addon label-danger"> </span>
+                                <input id="version" type="text" class="form-control" placeholder="Version" aria-describedby="sizing-addon1" name="version">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button id="add" class="btn btn-primary" disabled="true">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 }

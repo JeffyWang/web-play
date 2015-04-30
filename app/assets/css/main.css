@@ -27,6 +27,10 @@ hr {
     min-width: 250px;
 }
 
+.data {
+    margin-top: 20px;
+}
+
 #bubblemenu a {
     display: inline;
     margin-left: 15px;
@@ -73,8 +77,8 @@ hr {
     margin-top: -20px;
 
     /* Setting the transition property for all Browsers */
-    -moz-transition: all 0.5s ease-in-out; /* Firefox */
-    -webkit-transition: all 0.5s ease-in-out; /* Safari and Chrome */
-    -o-transition: all 0.5s ease-in-out;  /* Opera */
-    transition: all 0.5s ease-in-out; /* Browsers that Support it */
+    /*-moz-transition: all 0.5s ease-in-out; *//* Firefox */
+    /*-webkit-transition: all 0.5s ease-in-out; *//* Safari and Chrome */
+    /*-o-transition: all 0.5s ease-in-out;  *//* Opera */
+    /*transition: all 0.5s ease-in-out; *//* Browsers that Support it */
 }
