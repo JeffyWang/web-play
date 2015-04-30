@@ -21,29 +21,29 @@ import static play.libs.Json.toJson;
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(index.render("Your new application is ready."));
+        return ok(index.render());
     }
 
-    public static Result users() {
-        List<User> users = new Model.Finder(String.class, User.class).all();
-
-        return ok(toJson(users));
-    }
-
-    public static Result addUser() {
-        User user = Form.form(User.class).bindFromRequest().get();
-        user.save();
-        return ok(toJson(user));
-    }
-
-    public static Result test() {
-        JsonNode json = request().body().asJson();
-
-
-        return ok(json);
-
-    }
-
+//    public static Result users() {
+//        List<User> users = new Model.Finder(String.class, User.class).all();
+//
+//        return ok(toJson(users));
+//    }
+//
+//    public static Result addUser() {
+//        User user = Form.form(User.class).bindFromRequest().get();
+//        user.save();
+//        return ok(toJson(user));
+//    }
+//
+//    public static Result test() {
+//        JsonNode json = request().body().asJson();
+//
+//
+//        return ok(json);
+//
+//    }
+//
     public static Result getServers() {
         OSClient OS = OSFactory.builder()
                 .endpoint("http://172.16.12.15:5000/v2.0")
@@ -61,14 +61,14 @@ public class Application extends Controller {
 
         return ok(server.render(serverList));
     }
-
-    public static Result testString(String s) {
-        return ok(s);
-    }
-
-    public static Result params(String s) {
-        String p1 = request().getQueryString("p1");
-
-        return ok(s);
-    }
+//
+//    public static Result testString(String s) {
+//        return ok(s);
+//    }
+//
+//    public static Result params(String s) {
+//        String p1 = request().getQueryString("p1");
+//
+//        return ok(s);
+//    }
 }

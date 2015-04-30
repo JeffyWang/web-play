@@ -1,19 +1,30 @@
-@(title: String)(content: Html)
-
+@()(content: Html)
 <!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<html>
-    <head>
-        <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
-    </head>
-    <body>
-        <form action="@Application.addUser()" method="POST">
-            <input type="text" name="user_name"/>
-            <input type="text" name="password"/>
-            <button>add</button>
-        </form>
-    </body>
-</html>x
+    <title>Resource monitoring system</title>
+
+    <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("css/bootstrap.min.css"))'>
+    <link href="@routes.Assets.at("css/main.css")" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Resource monitoring system</h1>
+        <p class="lead">Openstack resource pool monitoring system.</p>
+      </div>
+
+      @content
+
+    </div>
+  </body>
+</html>

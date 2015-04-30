@@ -1,7 +1,6 @@
-@(message: String)
+@main() {
+    <script src="@routes.WebJarAssets.at(WebJarAssets.locate("js/bootstrap.min.js"))" type="text/javascript"></script>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
 
-@main("Welcome to Play") {
-
-    @play20.welcome(message, style = "Java")
-
+    <script src="@routes.Assets.at("js/index.js")" type="text/javascript"></script>
 }

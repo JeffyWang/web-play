@@ -3,31 +3,33 @@
 # ~~~~
 
 # Home page
-GET         /                     controllers.Application.index()
+GET        /                     controllers.Application.index()
 
 #User
-GET         /users                controllers.UserApplication.getUsers()
-POST        /user                 controllers.Application.addUser()
-POST        /test                 controllers.Application.test()
-#GET         /servers             controllers.Application.getServers()
-GET         /s1                   controllers.Application.testString(s: String = "s1")
-GET         /s2                   controllers.Application.testString(s: String = "s2")
-GET         /param/*p1            controllers.Application.params(p1)
+#GET         /users                controllers.UserApplication.getUsers()
+#POST        /user                 controllers.Application.addUser()
+#POST        /test                 controllers.Application.test()
+#GET        /servers              controllers.Application.getServers()
+#GET         /s1                   controllers.Application.testString(s: String = "s1")
+#GET         /s2                   controllers.Application.testString(s: String = "s2")
+#GET         /param/*p1            controllers.Application.params(p1)
 
 #pool
-GET          /pools               controllers.PoolApplication.getPools()
+GET        /pools                controllers.PoolApplication.getPools()
+GET        /appPool             controllers.PoolApplication.addPool()
 
 #Computer (nova)
-GET         /servers              controllers.ServerApplication.getServers()
+GET         /servers             controllers.ServerApplication.getServers()
 
 #Image (glance)
-GET         /images               controllers.ImageApplication.getImages()
+GET        /images               controllers.ImageApplication.getImages()
 
 #Networt (neutron)
-GET         /networks             controllers.NetworkApplication.getNetworks()
+GET        /networks             controllers.NetworkApplication.getNetworks()
 
 #Block Storage (cinder)
-GET         /block_storage        controllers.BlockStorageApplication.getBlockStorage()
+GET        /block_storage        controllers.BlockStorageApplication.getBlockStorage()
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file         controllers.Assets.at(path="/public", file)
+GET        /assets/*file         controllers.Assets.at(path="/public", file)
+GET        /webjars/*file        controllers.WebJarAssets.at(file)

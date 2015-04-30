@@ -1,0 +1,33 @@
+@(pools: List[models.Pool])
+
+@main() {
+  <div class="container marketing">
+
+      <div class="row" id="bubblemenu">
+          <a href="@routes.PoolApplication.addPool()" ><img class="cloud" src="@routes.Assets.at("images/add.png")"></a>
+          @for(pool <- pools) {
+              <a href="#">
+                  <img class="cloud" src="@routes.Assets.at("images/pool.jpg")">
+                  <div>
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <th scope="row">name</th>
+                          <td>@pool.poolName</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">host</th>
+                          <td>@pool.host</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">port</th>
+                          <td>@pool.port</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </a>
+          }
+      </div>
+  </div>
+}

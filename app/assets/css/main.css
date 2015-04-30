@@ -1,0 +1,80 @@
+h4 {
+    margin-top: 25px;
+}
+.row {
+    margin-bottom: 20px;
+}
+.row .row {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+[class*="col-"] {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /*background-color: #eee;*/
+    /*background-color: rgba(86,61,124,.15);*/
+    /*border: 1px solid #ddd;*/
+    /*border: 1px solid rgba(86,61,124,.2);*/
+}
+
+hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.cloud {
+    min-height: 250px;
+    min-width: 250px;
+}
+
+#bubblemenu a {
+    display: inline;
+    margin-left: 15px;
+    cursor:pointer;
+}
+
+
+#bubblemenu a > div {
+    width: 150px;
+    min-height: 50px;
+    position: absolute;
+    display: inline;
+    margin-left: -200px;
+    padding: 5px;
+    visibility:hidden;
+    opacity: 0;
+    margin-top: 500px;
+    background: #ffffff;
+    font-size:1em;
+
+    /* Setting the border-radius property for all Browsers */
+    -moz-border-radius: 5px; /* Firefox */
+    -webkit-border-radius: 5px; /* Safari and Chrome */
+    border-radius: 5px; /* Browsers that Support it like Opera */
+
+    /* Setting the box-shadow property for all Browsers */
+    -moz-box-shadow: 0 0 8px gray; /* Firefox */
+    -webkit-box-shadow: 0 0 8px gray; /* Safari and Chrome */
+    filter: progid:DXImageTransform.Microsoft.Shadow(color='#272229', Direction=135, Strength=3); /* IE */
+    box-shadow: 0 0 8px gray; /* Browsers that Support it like Opera */
+    /* Setting the transition property for all Browsers */
+    -moz-transition: all 0.5s ease-in-out; /* Firefox */
+    -webkit-transition: all 0.5s ease-in-out; /* Safari and Chrome */
+    -o-transition: all 0.5s ease-in-out; /* Opera */
+    transition: all 0.5s ease-in-out; /* Browsers that Support it */
+
+}
+
+
+#bubblemenu a:hover > div {
+
+    visibility:visible;
+    opacity: 1;
+    margin-top: -20px;
+
+    /* Setting the transition property for all Browsers */
+    -moz-transition: all 0.5s ease-in-out; /* Firefox */
+    -webkit-transition: all 0.5s ease-in-out; /* Safari and Chrome */
+    -o-transition: all 0.5s ease-in-out;  /* Opera */
+    transition: all 0.5s ease-in-out; /* Browsers that Support it */
+}
