@@ -26,10 +26,16 @@ public class User extends Model {
     @Formats.DateTime(pattern="yyyy-MM-dd HH:mm:ss")
     public Date updateDate = new Date();
 
-    public String userName;
+    public String userName = "admin";
 
-    public String password;
+    public String password  = "admin";
 
-    public String tenantName;
+    public String tenantName  = "admin";
+
+    public Integer poolId;
+
+    public static Finder<Integer,User> find = new Finder<Integer,User>(
+            Integer.class, User.class
+    );
 
 }

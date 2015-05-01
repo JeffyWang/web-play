@@ -1,6 +1,9 @@
 package controllers;
 
+import Service.ServerService;
 import models.Pool;
+import models.User;
+import org.openstack4j.model.compute.Server;
 import play.data.Form;
 import play.mvc.Controller;
 import views.html.index;
@@ -29,6 +32,9 @@ public class PoolApplication  extends Controller {
 
         Pool pool = Form.form(Pool.class).bindFromRequest().get();
         pool.save();
+        User user = new User();
+        user.poolId = pool.id;
+        user.save();
 
         return ok(index.render());
 

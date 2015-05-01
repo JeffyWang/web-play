@@ -39,7 +39,7 @@ hr {
 
 
 #bubblemenu a > div {
-    width: 150px;
+    /*width: 150px;*/
     min-height: 50px;
     position: absolute;
     display: inline;

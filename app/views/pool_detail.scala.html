@@ -1,4 +1,8 @@
 @(pool : Pool)
+@import Service.NetworkService
+@import Service.BlockStorageService
+@import Service.ServerService
+@import Service.ImageService
 
 @main{<ol class="breadcrumb"><li class="active">Home</li><li class="active">Pool</li><li class="active">@pool.poolName</li></ol>} {
     <div class="row">
@@ -13,54 +17,12 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="panel panel-primary " style="min-height: 300px">
-                <div class="panel-heading">Server <span class="badge">4</span></div>
-                <div class="panel-body">
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-primary " style="min-height: 300px">
-                <div class="panel-heading">Image <span class="badge">4</span></div>
-                <div class="panel-body">
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                    <li>@pool.poolName</li>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-primary " style="min-height: 300px">
-                <div class="panel-heading">Block Storage <span class="badge">4</span></div>
-                <div class="panel-body">
-                    <li>@pool.poolName</li>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="panel panel-primary " style="min-height: 300px">
-                <div class="panel-heading ">Network <span class="badge">4</span></div>
-                <div class="panel-body">
-                    <li>@pool.poolName</li>
-                </div>
-            </div>
-        </div>
+        @servers.render(ServerService.getServers(pool.id), pool)
+
+        @images.render(ImageService.getImages(pool.id), pool)
+
+        @block_storage.render(BlockStorageService.getVolumes(pool.id), pool)
+
+        @networks.render(NetworkService.getNetworks(pool.id), pool)
     </div>
 }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import models.User;
 import org.openstack4j.api.OSClient;
 import org.openstack4j.model.compute.Server;
+import org.openstack4j.model.image.Image;
 import org.openstack4j.openstack.OSFactory;
 import play.*;
 import play.data.Form;
@@ -44,23 +45,24 @@ public class Application extends Controller {
 //
 //    }
 //
-    public static Result getServers() {
-        OSClient OS = OSFactory.builder()
-                .endpoint("http://172.16.12.15:5000/v2.0")
-                .credentials("admin","admin")
-                .tenantName("admin")
-                .authenticate();
-
-        List<Server> servers = (List<Server>) OS.compute().servers().list();
-        List<models.Server> serverList = new ArrayList<models.Server>();
-        for (Server s : servers) {
-            models.Server server = new models.Server();
-            server.name = s.getName();
-            serverList.add(server);
-        }
-
-        return ok(server.render(serverList));
-    }
+//    public static Result getServers() {
+//        OSClient OS = OSFactory.builder()
+//                .endpoint("http://172.16.12.15:5000/v2.0")
+//                .credentials("admin","admin")
+//                .tenantName("admin")
+//                .authenticate();
+//
+//        List<Server> servers = (List<Server>) OS.compute().servers().list();
+//        List<Image> images = (List<Image>) OS.images().listAll();
+//        List<models.Server> serverList = new ArrayList<models.Server>();
+//        for (Server s : servers) {
+//            models.Server servers = new models.Server();
+//            servers.name = s.getName();
+//            serverList.add(servers);
+//        }
+//
+//        return ok(servers.render(serverList));
+//    }
 //
 //    public static Result testString(String s) {
 //        return ok(s);

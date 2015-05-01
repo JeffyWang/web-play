@@ -21,6 +21,7 @@ create table user (
   user_name                 varchar(255),
   password                  varchar(255),
   tenant_name               varchar(255),
+  pool_id                   integer,
   constraint pk_user primary key (id))
 ;
 

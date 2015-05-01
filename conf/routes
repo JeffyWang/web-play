@@ -20,16 +20,16 @@ POST        /addPool              controllers.PoolApplication.addPool()
 GET         /pool/:poolId         controllers.PoolApplication.getPool(poolId: Int)
 
 #Computer (nova)
-GET         /servers              controllers.ServerApplication.getServers()
+GET         /servers/:poolId              controllers.ServerApplication.getServers(poolId: Int)
 
 #Image (glance)
-GET         /images               controllers.ImageApplication.getImages()
+GET         /images/:poolId               controllers.ImageApplication.getImages(poolId: Int)
 
 #Networt (neutron)
-GET         /networks             controllers.NetworkApplication.getNetworks()
+GET         /networks/:poolId             controllers.NetworkApplication.getNetworks(poolId: Int)
 
 #Block Storage (cinder)
-GET         /block_storage        controllers.BlockStorageApplication.getBlockStorage()
+GET         /block_storage/:poolId        controllers.BlockStorageApplication.getBlockStorage(poolId: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file         controllers.Assets.at(path="/public", file)
