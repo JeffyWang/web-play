@@ -3,5 +3,23 @@
 
 @main{<ol class="breadcrumb"><li class="active">Home</li><li class="active">Pool</li><li class="active">@pool.poolName</li><li class="active">Block Storage</li></ol>}{
 
-
+    <div class="col-md-12">
+        <div class="panel panel-primary ">
+            <div class="panel-heading"><a href="@routes.BlockStorageApplication.getBlockStorage(pool.id)" style="text-decoration:none; color : #ffffff ;">Block Storage </a><span class="badge">@volumes.size()</span></div>
+            <table class="table">
+                <thead>
+                @for(volume <- volumes) {
+                    <tr>
+                        <th><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></th>
+                        <th>@volume.getName()</th>
+                        <th>@volume.getSize()</th>
+                        <th>@volume.getStatus()</th>
+                        <th>@volume.getVolumeType()</th>
+                        <th>@volume.getCreated()</th>
+                    </tr>
+                }
+                </thead>
+            </table>
+        </div>
+    </div>
 }

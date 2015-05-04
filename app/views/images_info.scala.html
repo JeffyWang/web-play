@@ -3,5 +3,23 @@
 
 @main{<ol class="breadcrumb"><li class="active">Home</li><li class="active">Pool</li><li class="active">@pool.poolName</li><li class="active">Images</li></ol>}{
 
+    <div class="col-md-12">
+        <div class="panel panel-primary ">
+            <div class="panel-heading"><a href="@routes.ImageApplication.getImages(pool.id)" style="text-decoration:none; color : #ffffff ;">Image </a><span class="badge">@images.size()</span></div>
+            <table class="table">
+                <thead>
+                @for(image <- images) {
+                    <tr>
+                        <th><span class="glyphicon glyphicon-record" aria-hidden="true"></span></th>
+                        <th>@image.getName()</th>
+                        <th>@image.getMinDisk()</th>
+                        <th>@image.getStatus()</th>
+                        <th>@image.getDiskFormat()</th>
+                    </tr>
+                }
+                </thead>
+            </table>
+        </div>
+    </div>
 
 }

@@ -3,5 +3,23 @@
 
 @main{<ol class="breadcrumb"><li class="active">Home</li><li class="active">Pool</li><li class="active">@pool.poolName</li><li class="active">Servers</li></ol>}{
 
-
+    <div class="col-md-12">
+        <div class="panel panel-primary ">
+            <div class="panel-heading"><a href="@routes.ServerApplication.getServers(pool.id)" style="text-decoration:none; color : #ffffff ;">Server </a><span class="badge">@servers.size()</span></div>
+            <table class="table">
+                <thead>
+                @for(server <- servers) {
+                    <tr>
+                        <th><span class="glyphicon glyphicon-cloud" aria-hidden="true"></span></th>
+                        <th>@server.getName()</th>
+                        <th>@server.getUuid()</th>
+                        <th>@server.getHost()</th>
+                        <th>@server.getVmState()</th>
+                        <th>@server.getCreated()</th>
+                    </tr>
+                }
+                </thead>
+            </table>
+        </div>
+    </div>
 }
