@@ -1,4 +1,7 @@
-This is your new Play application
-=================================
+**A openstack resource pool monitoring system..**
 
-This file will be packaged with your application, when using `activator dist`.
+  With this system, we can monitor many openstack pool's resource. In this system, one pool is a openstack system, the default user is admin. 
+  
+
+
+> Written with [StackEdit](https://stackedit.io/).
